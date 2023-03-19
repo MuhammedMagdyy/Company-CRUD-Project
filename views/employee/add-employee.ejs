@@ -1,0 +1,72 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/employee/add-employee">Add Employee</a></li>
+      <li><a href="/employee/show-employee">Show Employee</a></li>
+      <li><a href="/department/add-department">Add Department</a></li>
+      <li><a href="/department/show-department">Show Department</a></li>
+    </ul>
+  </nav>
+
+
+  <div class="container">
+    <h1>Add Employee</h1>
+    <form action="add-employee" method="POST">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Employee name.."
+      />
+
+      <label for="email">Email</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="Employee Email.."
+      />
+
+      <label for="phone">Phone</label>
+      <input
+        type="text"
+        id="phone"
+        name="phone"
+        placeholder="Employee Phone.."
+      />
+
+      <label for="address">Address</label>
+      <input
+        type="text"
+        id="address"
+        name="address"
+        placeholder="Employee Address.."
+      />
+
+      <label for="salary">Salary</label>
+      <input
+        type="text"
+        id="salary"
+        name="salary"
+        placeholder="Employee Salary.."
+      />
+
+      <label for="department">Department</label>
+      <select name="department" id="department">
+        <% for (let department of departments) { %>
+          <option value="<%- department.id %>"><%= department.name %></option>
+          <% } %> 
+      </select>
+
+      <input type="submit" value="Add Employee" />
+    </form>
+  </div>
+
+<%- include('../includes/end.ejs')  %>

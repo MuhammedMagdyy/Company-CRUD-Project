@@ -1,0 +1,49 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/show-employee.css">
+</head>
+
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="/employee/add-employee">Add Employee</a></li>
+      <li><a href="/employee/show-employee">Show Employee</a></li>
+      <li><a href="/department/add-department">Add Department</a></li>
+      <li><a href="/department/show-department">Show Department</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Employees</h1>
+    <table id="employees">
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Employee Email</th>
+        <th>Employee Phone</th>
+        <th>Employee Address</th>
+        <th>Employee Salary</th>
+        <th>Action Required</th>
+        <tr>
+        <% for (const employee of employees) { %>
+          <tr>
+          <td><%= employee.id %></td>
+          <td><%= employee.name %></td>
+          <td><%= employee.email %></td>
+          <td><%= employee.phone %></td>
+          <td><%= employee.address %></td>
+          <td><%= employee.salary %>$</td>
+          <td>
+            <div class="div">
+              <a href="/employee/edit-employee/<%= employee.id %>">Edit</a>
+              <a href="/employee/delete/<%= employee.id %>">Delete</a>
+            </div>
+          </td>
+        </tr>
+        <% } %>
+      </tr>
+    </table>
+  </div>
+  
+
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,39 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/show-department.css">
+
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/employee/add-employee">Add Employee</a></li>
+      <li><a href="/employee/show-employee">Show Employee</a></li>
+      <li><a href="/department/add-department">Add Department</a></li>
+      <li><a href="/department/show-department">Show Department</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Departments</h1>
+    <table id="departments">
+        <th>Department ID</th>
+        <th>Department Name</th>
+        <th>Action Required</th>
+      <tr>
+        <% for (const department of departments) { %>
+          <tr>
+          <td><%= department.id %></td>
+          <td><%= department.name %></td>
+          <td>
+            <a href="/department/edit-department/<%= department.id %>">Edit</a>
+            <a href="/department/delete/<%= department.id %>">Delete</a>
+          </td>
+        </tr>
+        <% } %>
+      </tr>
+    </table>
+  </div>
+  
+
+<%- include('../includes/end.ejs') %>
