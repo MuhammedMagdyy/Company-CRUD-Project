@@ -38,7 +38,7 @@ exports.postAddEmployee = (req, res, next) => {
 };
 
 exports.getAllEmployees = (req, res, next) => {
-  Employee.findAll()
+  Employee.findAll({include: Department})
     .then(employees => {
       res.render('employee/show-employee', {
         employees: employees,

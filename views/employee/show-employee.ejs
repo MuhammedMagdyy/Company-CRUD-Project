@@ -23,6 +23,7 @@
         <th>Employee Phone</th>
         <th>Employee Address</th>
         <th>Employee Salary</th>
+        <th>Department</th>
         <th>Action Required</th>
         <tr>
         <% for (const employee of employees) { %>
@@ -33,6 +34,7 @@
           <td><%= employee.phone %></td>
           <td><%= employee.address %></td>
           <td><%= employee.salary %>$</td>
+          <td><%= employee.department.name %></td>
           <td>
             <div class="div">
               <a href="/employee/edit-employee/<%= employee.id %>">Edit</a>
