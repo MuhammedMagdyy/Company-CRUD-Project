@@ -29,5 +29,4 @@ To use the application, follow these steps:
 - MySQL database
 
 ## Video
-![CRUD Video](https://user-images.githubusercontent.com/60513866/226199196-c314f4b2-aec2-4c4b-8203-369f567e241d.gif)
-
+![CRUD Video](https://user-images.githubusercontent.com/60513866/229349696-81de45ad-5fb2-4fd4-966a-2107108955d3.gif)
